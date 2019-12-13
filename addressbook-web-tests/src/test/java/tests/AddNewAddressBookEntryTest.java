@@ -1,4 +1,4 @@
-package ru.stqa.pft.addressbook;
+package tests;
 
 import java.util.concurrent.TimeUnit;
 
@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
+import model.NewAddressBookData;
 
 public class AddNewAddressBookEntryTest {
   private WebDriver wd;
