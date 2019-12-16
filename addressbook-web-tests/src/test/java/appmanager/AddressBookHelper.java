@@ -4,8 +4,8 @@ import model.NewAddressBookData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AddNewAddressBookHelper extends HelperBase {
-  public AddNewAddressBookHelper(WebDriver wd) {
+public class AddressBookHelper extends HelperBase {
+  public AddressBookHelper(WebDriver wd) {
     super(wd);
   }
 
@@ -83,8 +83,25 @@ public class AddNewAddressBookHelper extends HelperBase {
     type(By.name("middlename"), middleName);
   }
 
-  private void fillFirstNameField(String firstName) {
+  public void fillFirstNameField(String firstName) {
     click(By.name("firstname"));
     type(By.name("firstname"), firstName);
+  }
+
+  public void selectChechBox() {
+    click(By.id("6"));
+  }
+
+  public void goToEditPage() {
+    click(By.xpath("//img[@alt='Edit']"));
+  }
+
+  public void pressUpdate() {
+    click(By.name("update"));
+  }
+
+  public void pressDelete() {
+    click(By.xpath("//input[@value='Delete']"));
+    closeDialogWindow();
   }
 }

@@ -13,7 +13,7 @@ public class ApplicationManager {
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
-  private AddNewAddressBookHelper addNewAddressBookHelper;
+  private AddressBookHelper addressBookHelper;
 
   public void init() {
     wd = new ChromeDriver();
@@ -21,7 +21,7 @@ public class ApplicationManager {
     wd.get("http://localhost/addressbook/");
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
-    addNewAddressBookHelper = new AddNewAddressBookHelper(wd);
+    addressBookHelper = new AddressBookHelper(wd);
     sessionHelper = new SessionHelper(wd);
     sessionHelper.login("admin", "secret");
   }
@@ -53,7 +53,7 @@ public class ApplicationManager {
     return navigationHelper;
   }
 
-  public AddNewAddressBookHelper getAddNewAddressBookHelper() {
-    return addNewAddressBookHelper;
+  public AddressBookHelper getAddressBookHelper() {
+    return addressBookHelper;
   }
 }
