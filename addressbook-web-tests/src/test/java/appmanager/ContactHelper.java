@@ -1,7 +1,9 @@
 package appmanager;
 
 import model.ContactData;
+import model.Contacts;
 import model.GroupData;
+import model.Groups;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +28,7 @@ public class ContactHelper extends HelperBase {
   public void fillContactForm(ContactData contactData, boolean creation) {
     this.contactData = contactData;
     type(By.name("firstname"), contactData.getFirstname());
-    type(By.name("lastname"), contactData.getLastname());
+    type(By.name("lastname"), contactData.getSecondName());
 
     if (creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -43,8 +45,8 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("home"));
   }
 
-  public void initContactModification(int index) {
-    wd.findElements(By.cssSelector("img[alt='Edit']")).get(index).click();
+  public void initContactModification(int id) {
+    wd.findElements(By.cssSelector("img[alt='Edit']")).get(0).click(); //todo как правильно искать по id??
   }
 
   public void submitContactModification() {
@@ -71,16 +73,56 @@ public class ContactHelper extends HelperBase {
     closeDialogWindow();
   }
 
-  public List<ContactData> getContactList() {
-    List<ContactData> contacts = new ArrayList<>();
+  private Contacts contactCach = null;
+
+  public Contacts all() {
+    if (contactCach != null) {
+      return new Contacts(contactCach);
+    }
+    contactCach = new Contacts();
     List<WebElement> elements = wd.findElements(By.name("entry"));
     for (WebElement element : elements) {
       List<WebElement> contactEntryList = element.findElements(By.cssSelector("td"));
       String firstName = contactEntryList.get(2).getText();
-      String lastName = contactEntryList.get(1).getText();
-      ContactData contact = new ContactData(firstName, lastName, null);
-      contacts.add(contact);
+      String secondName = contactEntryList.get(1).getText();
+      int id = Integer.parseInt(contactEntryList.get(0).findElement(By.tagName("input")).getAttribute("value"));
+      ContactData contact = new ContactData().withId(id).withFirstName(firstName).withSecondName(secondName).withGroup(null);
+      contactCach.add(contact);
     }
-    return contacts;
+    return new Contacts(contactCach);
+  }
+
+  public ContactData infoFromEditForm(ContactData contact) {
+    return null;
+  }
+
+  public void create(ContactData contact) {
+    initContactCreation();
+    fillContactForm(contact, true);
+    submitContactCreation();
+    contactCach = null;
+    returnToHomePage();
+  }
+
+  public int count() {
+    return wd.findElements(By.name("entry")).size();
+  }
+
+  public void delete(ContactData deletedContact) {
+    selectContactById(deletedContact.getId());
+    deleteSelectedContacts();
+    contactCach = null;
+    returnToHomePage();
+  }
+
+  private void selectContactById(int id) {
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+  }
+
+  public void modify(ContactData contact) {
+    initContactModification(contact.getId());
+    fillContactForm(contact, false);
+    submitContactModification();
+    returnToHomePage();
   }
 }

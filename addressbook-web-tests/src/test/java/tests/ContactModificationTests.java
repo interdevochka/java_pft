@@ -1,34 +1,33 @@
 package tests;
 
 import model.ContactData;
+import model.Contacts;
 import model.GroupData;
+import model.Groups;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Comparator;
 import java.util.List;
 
-public class ContactModificationTests extends TestBase{
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+public class ContactModificationTests extends TestBase {
 
 
   @Test
   public void testContactModification() {
-    app.getNavigationHelper().goToHomePage();
-    if (!app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(new ContactData("test1", null, "test1"));
+    app.goTo().goToHomePage();
+    if (!app.contact().isThereAContact()) {
+      app.contact().createContact(new ContactData("test1", null, "test1"));
     }
-    List<ContactData> before = app.getContactHelper().getContactList();
-    app.getContactHelper().initContactModification(before.size()-1);
-    ContactData contact = new ContactData("test_name", "test_surname", null);
-    app.getContactHelper().fillContactForm(contact, false);
-    app.getContactHelper().submitContactModification();
-    app.getContactHelper().returnToHomePage();
-    List<ContactData> after = app.getContactHelper().getContactList();
-    Assert.assertEquals(after.size(), before.size() );
-    Comparator<? super ContactData> byLastName = (g1, g2) -> g1.getLastname().compareTo(g2.getLastname());
-    before.sort(byLastName);
-    after.sort(byLastName);
-    Assert.assertEquals(before, after);
-
-   }
+    Contacts before = app.contact().all();
+    ContactData modifiedContact = before.iterator().next();
+    ContactData contact = new ContactData().withId(modifiedContact.getId()).withFirstName("test_name").withSecondName("test_surname");
+    app.contact().modify(contact);
+    assertThat(app.contact().count(), equalTo(before.size()));
+    Contacts after = app.contact().all();
+    assertThat(after, equalTo(before.without(modifiedContact).withAdded(modifiedContact)));
+  }
 }

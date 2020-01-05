@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class EditNewAddressBookEntryTests extends TestBase {
   @Test
   public void testEditContacts() {
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     app.getAddressBookHelper().goToEditPage();
     app.getAddressBookHelper().fillAddNewAddressBookForm(getNewAddressBookData());
     app.getAddressBookHelper().pressUpdate();

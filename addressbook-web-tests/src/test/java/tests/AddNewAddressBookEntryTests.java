@@ -8,7 +8,7 @@ public class AddNewAddressBookEntryTests extends TestBase {
 
   @Test
   public void testAddNewAddressBookEntry() {
-    app.getNavigationHelper().goToAddNewBookPage();
+    app.goTo().goToAddNewBookPage();
     app.getAddressBookHelper().fillAddNewAddressBookForm(getNewAddressBookData());
     app.getAddressBookHelper().submitForm();
   }

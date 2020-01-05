@@ -6,7 +6,7 @@ public class DeleteNewAddressBookEntryTests extends TestBase {
 
   @Test
   public void testEditContacts() {
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     app.getAddressBookHelper().selectChechBox();
     app.getAddressBookHelper().pressDelete();
   }
