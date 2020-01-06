@@ -2,13 +2,7 @@ package tests;
 
 import model.ContactData;
 import model.Contacts;
-import model.GroupData;
-import model.Groups;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.Comparator;
-import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -24,7 +18,7 @@ public class ContactModificationTests extends TestBase {
     }
     Contacts before = app.contact().all();
     ContactData modifiedContact = before.iterator().next();
-    ContactData contact = new ContactData().withId(modifiedContact.getId()).withFirstName("test_name").withSecondName("test_surname");
+    ContactData contact = new ContactData().withId(modifiedContact.getId()).withFirstName("test_name").withLastName("test_surname");
     app.contact().modify(contact);
     assertThat(app.contact().count(), equalTo(before.size()));
     Contacts after = app.contact().all();
