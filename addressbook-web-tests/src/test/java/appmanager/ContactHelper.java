@@ -25,6 +25,7 @@ public class ContactHelper extends HelperBase {
     this.contactData = contactData;
     type(By.name("firstname"), contactData.getFirstname());
     type(By.name("lastname"), contactData.getSecondName());
+    attach(By.name("photo"), contactData.getPhoto());
 
     if (creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -40,11 +41,7 @@ public class ContactHelper extends HelperBase {
   public void returnToHomePage() {
     click(By.linkText("home"));
   }
-
-  public void initContactModification(int id) {
-    wd.findElements(By.cssSelector("img[alt='Edit']")).get(0).click(); //todo как правильно искать по id??
-  }
-
+  
   public void submitContactModification() {
     click(By.name("update"));
   }
@@ -86,8 +83,8 @@ public class ContactHelper extends HelperBase {
       String address = contactEntryList.get(3).getText();
       int id = Integer.parseInt(contactEntryList.get(0).findElement(By.tagName("input")).getAttribute("value"));
       ContactData contact =
-      new ContactData().withId(id).withFirstName(firstName).withLastName(secondName)
-              .withGroup(null).withAllEmails(allEmails).withAllPhones(allPhones).withAddress(address);
+              new ContactData().withId(id).withFirstName(firstName).withLastName(secondName)
+                      .withGroup(null).withAllEmails(allEmails).withAllPhones(allPhones).withAddress(address);
       contactCach.add(contact);
     }
     return new Contacts(contactCach);
@@ -140,7 +137,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void modify(ContactData contact) {
-    initContactModification(contact.getId());
+    initContactModificationById(contact.getId());
     fillContactForm(contact, false);
     submitContactModification();
     returnToHomePage();
