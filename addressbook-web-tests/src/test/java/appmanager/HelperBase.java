@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
+import java.io.File;
+
 public class HelperBase {
   protected WebDriver wd;
 
@@ -25,6 +27,17 @@ public class HelperBase {
       }
     }
   }
+
+
+  protected void attach(By locator, File file) {
+    if (file != null) {
+      wd.findElement(locator).sendKeys(file.getAbsolutePath());
+      }
+    }
+
+
+
+
 
   protected void closeDialogWindow() {
     wd.switchTo().alert().accept();

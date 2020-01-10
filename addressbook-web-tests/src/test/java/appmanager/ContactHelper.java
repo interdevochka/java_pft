@@ -41,7 +41,7 @@ public class ContactHelper extends HelperBase {
   public void returnToHomePage() {
     click(By.linkText("home"));
   }
-  
+
   public void submitContactModification() {
     click(By.name("update"));
   }
