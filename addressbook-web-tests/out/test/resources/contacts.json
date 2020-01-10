@@ -1,4 +1,12 @@
 [
-  {},
-  {}
+  {
+    "firstname": "test2",
+    "lastname": "name",
+    "group": "test2"
+  },
+  {
+    "firstname": "test2",
+    "lastname": "name",
+    "group": "test2"
+  }
 ]

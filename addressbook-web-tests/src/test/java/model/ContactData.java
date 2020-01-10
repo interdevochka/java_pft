@@ -1,11 +1,19 @@
 package model;
 
+import com.google.gson.annotations.Expose;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
 
+
+  @Expose
   private String firstname;
+  @Expose
   private String lastname;
+  @Expose
   private String group;
   private String homePhone;
   private String email;
@@ -16,11 +24,18 @@ public class ContactData {
   private String workPhone;
   private String allPhones;
   private String address;
+  @XStreamOmitField
   private int id;
+  private File photo;
 
+  public File getPhoto() {
+    return photo;
+  }
 
-
-
+  public ContactData withPhoto(File photo) {
+    this.photo = photo;
+    return this;
+  }
 
   public ContactData(String firstname, String secondname, String group) {
     this.firstname = firstname;
