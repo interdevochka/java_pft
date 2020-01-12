@@ -1,4 +1,4 @@
-package tests;
+package ru.stqa.pft.addressbook.tests;
 
 import org.jetbrains.annotations.NotNull;
 import org.testng.annotations.*;

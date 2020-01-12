@@ -1,6 +1,6 @@
 .idea
 .gradle
-build/*
+addressbook-web-tests/build/*
 *.class
 out/
 

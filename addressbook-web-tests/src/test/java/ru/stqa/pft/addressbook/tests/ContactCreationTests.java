@@ -1,10 +1,9 @@
-package tests;
+package ru.stqa.pft.addressbook.tests;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import model.ContactData;
 import model.Contacts;
-import model.GroupData;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

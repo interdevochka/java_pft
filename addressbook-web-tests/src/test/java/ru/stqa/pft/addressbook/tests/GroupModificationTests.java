@@ -1,4 +1,4 @@
-package tests;
+package ru.stqa.pft.addressbook.tests;
 
 import model.GroupData;
 import model.Groups;
