@@ -1,12 +1,14 @@
 [
   {
     "firstname": "test2",
-    "lastname": "name",
-    "group": "test2"
+    "lastname": "name2",
+    "group": "test 0",
+    "photo": "src\\test\\resources\\photo.png"
   },
   {
-    "firstname": "test2",
-    "lastname": "name",
-    "group": "test2"
+    "firstname": "test1",
+    "lastname": "name1",
+    "group": "test 1",
+    "photo": "src\\test\\resources\\photo.png"
   }
 ]

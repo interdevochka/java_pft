@@ -1,5 +1,7 @@
 package appmanager;
 
+import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 import org.hibernate.Session;
@@ -31,6 +33,17 @@ public class DbHelper {
     session.getTransaction().commit();
     session.close();
     return new Groups(result);
+  }
+
+  public Contacts contacts() {
+    Session session = sessionFactory.openSession();
+    session.beginTransaction();
+    List<ContactData> result = session.createQuery("from ContactData").list();
+
+    session.getTransaction().commit();
+    session.close();
+    return new Contacts(result);
+
   }
 }
 
