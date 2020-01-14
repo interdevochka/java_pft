@@ -1,7 +1,7 @@
 package appmanager;
 
-import model.ContactData;
-import model.Contacts;
+import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

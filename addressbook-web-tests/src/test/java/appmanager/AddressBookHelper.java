@@ -1,6 +1,6 @@
 package appmanager;
 
-import model.NewAddressBookData;
+import ru.stqa.pft.addressbook.model.NewAddressBookData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

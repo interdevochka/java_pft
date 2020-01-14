@@ -1,7 +1,7 @@
 package ru.stqa.pft.addressbook.tests;
 
-import model.GroupData;
-import model.Groups;
+import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

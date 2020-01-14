@@ -1,39 +1,79 @@
-package model;
+package ru.stqa.pft.addressbook.model;
 
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
 
+@Entity
+@Table(name = "addressbook")
 public class ContactData {
 
+  @Id
+  @Column(name = "id")
+  private int id;
 
   @Expose
+  @Column(name = "firstname")
   private String firstname;
+
   @Expose
+  @Column(name = "lastname")
   private String lastname;
   @Expose
+  @Transient
   private String group;
+
+  @Column(name = "home")
+  @Type(type = "text")
   private String homePhone;
+  @Column(columnDefinition = "TEXT")
   private String email;
+  @Column(columnDefinition = "TEXT")
   private String email2;
+  @Column(columnDefinition = "TEXT")
   private String email3;
+  @Transient
   private String allEmails;
+
+  @Column(name = "mobile")
+  @Type(type = "text")
   private String mobilePhone;
+
+  @Column(name = "work")
+  @Type(type = "text")
   private String workPhone;
+
+  @Transient
   private String allPhones;
+
+  @Column(columnDefinition = "TEXT")
   private String address;
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
+  }
+
   @XStreamOmitField
-  private int id;
-  private File photo;
+
+  @Column(name = "photo")
+  @Type(type = "text")
+  private String photo;
 
   public File getPhoto() {
-    return photo;
+    return new File(photo);
   }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 
@@ -61,7 +101,6 @@ public class ContactData {
   }
 
 
-
   public String getAllPhones() {
     return allPhones;
   }
@@ -70,8 +109,6 @@ public class ContactData {
     this.allPhones = allPhones;
     return this;
   }
-
-
 
 
   @Override
@@ -169,7 +206,6 @@ public class ContactData {
   public String getAllEmails() {
     return allEmails;
   }
-
 
 
   public String getEmail() {

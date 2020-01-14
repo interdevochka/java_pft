@@ -25,6 +25,7 @@ public class ApplicationManager {
   private AddressBookHelper addressBookHelper;
   private ContactHelper contactHelper;
   private String browser;
+  private DbHelper dbHelper;
 
 
   public ApplicationManager(String browser) {
@@ -38,6 +39,7 @@ public class ApplicationManager {
 
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
 
+    dbHelper = new DbHelper();
 
     if (browser.equals(BrowserType.FIREFOX)) {
       wd = new FirefoxDriver();
@@ -90,5 +92,9 @@ public class ApplicationManager {
 
   public ContactHelper contact() {
     return contactHelper;
+  }
+
+  public DbHelper db() {
+    return dbHelper;
   }
 }

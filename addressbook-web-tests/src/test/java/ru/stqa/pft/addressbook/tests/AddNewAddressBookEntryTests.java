@@ -2,7 +2,7 @@ package ru.stqa.pft.addressbook.tests;
 
 import org.jetbrains.annotations.NotNull;
 import org.testng.annotations.*;
-import model.NewAddressBookData;
+import ru.stqa.pft.addressbook.model.NewAddressBookData;
 
 public class AddNewAddressBookEntryTests extends TestBase {
 

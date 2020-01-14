@@ -1,6 +1,6 @@
 package ru.stqa.pft.addressbook.tests;
 
-import model.NewAddressBookData;
+import ru.stqa.pft.addressbook.model.NewAddressBookData;
 import org.testng.annotations.Test;
 
 public class EditNewAddressBookEntryTests extends TestBase {
