@@ -59,7 +59,7 @@ public class ContactDataGenerator {
   private static List<ContactData> generateContacts(int count) {
     List<ContactData> contacts = new ArrayList<ContactData>();
     for (int i = 0; i < count; i++) {
-      contacts.add(new ContactData().withFirstName("test2").withLastName("name").withGroup("test2"));
+      contacts.add(new ContactData().withFirstName("test2").withLastName("name"));
     }
     return contacts;
   }
