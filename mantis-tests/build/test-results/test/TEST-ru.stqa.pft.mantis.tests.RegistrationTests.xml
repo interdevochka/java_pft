@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.mantis.tests.RegistrationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-24T14:53:53" hostname="MININT-HMRG0BE" time="6.047">
+  <properties/>
+  <testcase name="testRegistration" classname="ru.stqa.pft.mantis.tests.RegistrationTests" time="6.047"/>
+  <system-out><![CDATA[21:53:53.816 [org.subethamail.smtp.server.ServerThread *:1025] INFO org.subethamail.smtp.server.ServerThread - SMTP server *:1025 started
+21:53:58.198 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - SMTP connection from 0:0:0:0:0:0:0:1/0:0:0:0:0:0:0:1, new connection count: 1
+21:53:58.198 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Server: 220 MININT-HMRG0BE ESMTP SubEthaSMTP 3.1.7
+21:53:58.199 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Client: EHLO localhost
+21:53:58.199 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Server: 250-MININT-HMRG0BE
+250-8BITMIME
+250 Ok
+21:53:58.199 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Client: MAIL FROM:<admin@example.com>
+21:53:58.205 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
+21:53:58.205 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Client: RCPT TO:<user1579877633816@localhost.localdomain>
+21:53:58.205 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.wiser.Wiser - Accepting mail from admin@example.com to user1579877633816@localhost.localdomain
+21:53:58.206 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
+21:53:58.206 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Client: DATA
+21:53:58.206 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Server: 354 End data with <CR><LF>.<CR><LF>
+21:53:58.210 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.wiser.Wiser - Delivering mail from admin@example.com to user1579877633816@localhost.localdomain
+21:53:58.211 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.wiser.Wiser - Creating message from data with 1225 bytes
+21:53:58.212 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
+21:53:58.212 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Client: RSET
+21:53:58.212 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
+21:53:58.216 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Client: QUIT
+21:53:58.216 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59750] DEBUG org.subethamail.smtp.server.Session - Server: 221 Bye
+21:53:58.218 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - SMTP connection from 0:0:0:0:0:0:0:1/0:0:0:0:0:0:0:1, new connection count: 1
+21:53:58.218 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Server: 220 MININT-HMRG0BE ESMTP SubEthaSMTP 3.1.7
+21:53:58.228 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Client: EHLO localhost
+21:53:58.228 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Server: 250-MININT-HMRG0BE
+250-8BITMIME
+250 Ok
+21:53:58.229 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Client: MAIL FROM:<admin@example.com>
+21:53:58.229 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
+21:53:58.229 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Client: RCPT TO:<root@localhost>
+21:53:58.230 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.wiser.Wiser - Accepting mail from admin@example.com to root@localhost
+21:53:58.230 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
+21:53:58.230 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Client: DATA
+21:53:58.230 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Server: 354 End data with <CR><LF>.<CR><LF>
+21:53:58.231 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.wiser.Wiser - Delivering mail from admin@example.com to root@localhost
+21:53:58.231 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.wiser.Wiser - Creating message from data with 869 bytes
+21:53:58.231 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
+21:53:58.232 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Client: RSET
+21:53:58.232 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
+21:53:58.236 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Client: QUIT
+21:53:58.236 [org.subethamail.smtp.server.Session-/0:0:0:0:0:0:0:1:59751] DEBUG org.subethamail.smtp.server.Session - Server: 221 Bye
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 78.0.3904.105 (60e2d8774a8151efa6a00b1f358371b1e0e07ee2-refs/branch-heads/3904@{#877}) on port 24838
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1579877635.617][WARNING]: This version of ChromeDriver has not been tested with Chrome version 79.
+янв 24, 2020 9:53:56 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
