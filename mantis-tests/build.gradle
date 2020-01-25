@@ -15,6 +15,7 @@ dependencies {
     implementation 'com.newrelic.logging:logback:1.0-rc3'
     implementation 'org.hibernate:hibernate-core:5.3.15.Final'
     implementation 'mysql:mysql-connector-java:8.0.18'
+    implementation 'biz.futureware.mantis:mantis-axis-soap-client:1.2.19'
 }
 test {
     useTestNG {
