@@ -11,6 +11,7 @@ import java.rmi.RemoteException;
 import java.util.Set;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class SoapTests extends TestBase {
   @Test
@@ -24,10 +25,16 @@ public class SoapTests extends TestBase {
 
   @Test
   public void testCreateIssue() throws MalformedURLException, ServiceException, RemoteException {
+    skipIfNotFixed(1);
     Set<Project> projects = app.soap().getProjects();
     Issue issue = new Issue().withSummary("Test issue")
             .withDescription("test issue description").withProject(projects.iterator().next());
     Issue created = app.soap().addIssue(issue);
     assertEquals(issue.getSummary(), created.getSummary());
+  }
+
+  @Test
+  public void testSkipIssue() throws RemoteException, ServiceException, MalformedURLException {
+    assertTrue(isIssueOpen(1));
   }
 }
