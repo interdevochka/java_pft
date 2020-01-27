@@ -7,6 +7,7 @@ public class Issue {
   private int id;
   private String subject;
   private String description;
+  private String resolved;
 
   public int getId() {
     return id;
@@ -49,6 +50,12 @@ public class Issue {
     this.description = description;
     return this;
   }
+
+
+  public String getResolved() {
+    return resolved;
+  }
+
 }
 
 
